@@ -1,0 +1,39 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: service-library
+
+  datasource:
+    url: jdbc:mysql://localhost:3306/takeaway_sys
+    username: root
+    password: 234891516Chen
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  redis:
+    host: 192.168.9.128
+    port: 6379
+    client-type: jedis
+    jedis:
+      pool:
+        max-active: 1000
+        min-idle: 100
+        max-idle: 200
+        time-between-eviction-runs: 180000
+        max-wait: 10000
+    connect-timeout: 90000
+    timeout: 90000
+    password: 234891
+
+  rabbitmq:
+    host: 192.168.9.128
+    port: 5672
+    username: sxalter
+    password: sxalter
+    publisher-confirm-type: correlated
+    publisher-returns: true
+
+mybatis-plus:
+  configuration:
+    map-underscore-to-camel-case: true
